@@ -4,6 +4,10 @@ def mcd(a, b):
     return a
 
 
+def mcm(a, b):
+    return (a * b) // mcd(a, b)
+
+
 def main():
     try:
         num1 = int(input("Ingresa el primer número entero: "))
@@ -13,8 +17,11 @@ def main():
             print("Por favor ingresa números enteros positivos.")
             return
 
-        resultado = mcd(num1, num2)
-        print(f"El máximo común divisor de {num1} y {num2} es: {resultado}")
+        resultado_mcd = mcd(num1, num2)
+        resultado_mcm = mcm(num1, num2)
+
+        print(f"El máximo común divisor de {num1} y {num2} es: {resultado_mcd}")
+        print(f"El mínimo común múltiplo de {num1} y {num2} es: {resultado_mcm}")
 
     except ValueError:
         print("Por favor ingresa números enteros válidos.")
